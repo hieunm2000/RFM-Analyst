@@ -1,68 +1,84 @@
-# Phân Tích RFM
+# [PYTHON] RFM Analysis
+## I. Introduction
+### 1. About RFM Analysis
+### Why RFM?
+- RFM is a marketing analysis technique that stands for Recency, Frequency, and Monetary Value.
+  - **Recency**: measures how recently a customer has made a purchase.
+  - **Frequency**: measures how often a customer has made purchases.
+  - **Monetary Value**: measures the total amount of money a customer has spent on purchases.
+- RFM is used to identify and categorize customers based on their purchasing behavior and how recently and frequently they have made purchases, as well as the monetary value of those purchases.
+### How?
+- In RFM analysis, customers are scored based on three factors (Recency - how recently, Frequency - how often, Monetary - how much), then labeled based on the combination of RFM scores
+### Reference
+- [RFM Analysis For Successful Customer Segmentation](https://www.putler.com/rfm-analysis)
 
-## Tổng Quan
+### 2. Business Questions
+- The Marketing Department needs to classify the segments of each customer to deploy each marketing program suitable for each customer group.
+- The Marketing Director also proposed a plan to use the RFM model in Python to segment customers, and then launch marketing campaigns to thank customers for supporting the company over the past time. As well as exploit potential customers to become loyal customers.
+- Suggestions to the Marketing and Sales team with the company's retail model, which of the three indicators R, F, and M should be most interested in?
 
-Kho lưu trữ này chứa một file Jupyter Notebook thực hiện **Phân tích RFM** bằng Python. Phân tích RFM (Recency, Frequency, Monetary) là một kỹ thuật dùng để phân khúc khách hàng dựa trên hành vi mua sắm của họ. Phương pháp này giúp hiểu rõ giá trị khách hàng và tối ưu hoá chiến lược tiếp thị.
+## II. Data Visualization with Python
+- **Seaborn Countplot of Frequency**
 
----
+![image]()
+- **Treemap of customer segmentation**
 
-## Tính Năng
+![newplot]()
+- **Seaborn Countplot of customer segmentation**
 
-- **Xử Lý Dữ Liệu:** Chuẩn bị dữ liệu giao dịch khách hàng để tính toán RFM.
-- **Tính Toán Chỉ Số RFM:** Xác định giá trị Recency, Frequency và Monetary cho từng khách hàng.
-- **Phân Khúc Khách Hàng:** Chia khách hàng thành các nhóm khác nhau dựa trên điểm RFM.
-- **Insight và Đề Xuất:** Cung cấp những thông tin chi tiết để tối ưu hoá chiến lược marketing và giữ chân khách hàng.
+![image]()
+- **Pie chart of Channel**
 
----
+![image]()
+- **Pie chart of Ship mode**
 
-## Công Nghệ Sử Dụng
+![image]()
+- **Pie chart of Category**
 
-- **Thư Viện Python:**
-  - `pandas` cho xử lý dữ liệu
-  - `numpy` cho tính toán số học
-  - `matplotlib` và `seaborn` cho trực quan hóa dữ liệu
-- **Môi Trường Thực Hiện:**
-  - `Google Colab` làm môi trường chính để thực hiện code
----
+![image]()
+- **Pie chart of Sub-category**
 
-## Cấu Trúc File
+![image]()
+- **Bar plot: Total Sales by Segmentation**
 
-- `RFM Analysis.ipynb`: File Jupyter Notebook chính chứa tất cả mã lệnh và biểu đồ trực quan.
+![image]()
+- **Bar plot: Total Profit by Segmentation**
 
----
+![image]()
+- **Bar plot: Total Sales by Region**
 
-## Hướng Dẫn Chạy Notebook
+![image]()
+- **Treemap of State by Orders**
 
-1. Clone kho lưu trữ này về máy tính của bạn.
-2. Cài đặt các thư viện Python yêu cầu bằng lệnh sau:
-   ```bash
-   pip install pandas numpy matplotlib seaborn
-   ```
-3. Mở file Jupyter Notebook:
-   ```bash
-   jupyter notebook "RFM Analysis.ipynb"
-   ```
-4. Chạy các cell trong notebook theo tự thứ để thực hiện phân tích.
+![newplot (1)]()
+## III. Insights
+- 1.The most important index of the 3 indicators that the SuperStore company needs to pay attention to is F, then R: because the rate of customers buying once and twice is very high. Very few customers make long-term purchases like 8-9 times or more.
+     -> That shows that the customer retention rate at the company is still low.
+     
+- 2.About Customer Segmentation: The company is mainly "New Customers" >"Hibernating customers">"Lost customers".
+    -> This again shows that we need to pay attention to the index F.
+  
+- 3.Revenue and profit from "New Customers" is the highest.
 
----
+- 4.The revenue in the East region is the lowest compared to the other 3 regions.
 
-## Insights
+- 5.California, Texas, Illinois vs Florida are the states with the most orders.
 
-- **Khách Hàng Giá Trị Cao:** Xác định nhóm khách hàng giá trị cao để đề xuất chiến lược marketing cá nhân hoá.
-- **Giữ Chân Khách Hàng:** Đề xuất cách tương tác với nhóm khách hàng tần suất thấp hoặc mới mua gần đây.
-- **Cơ Hội Khuyến Mãi:** Nổi bật nhóm khách hàng có khả năng đáp ứng tích cực với các chương trình khuyến mãi.
+- 6.The company's main customers are Consumers accounting for 52%, Corporate: 30% and finally Home Office.
 
----
+- 7.The categories with the most orders are "Office Supplies" up to 60%, then "Furniture".
 
-## Phát Triển Tương Lai
-
-- Tích hợp thêm dữ liệu như thông tin nhân khẩu khách hàng.
-- Tự động hoá phân khúc RFM bằng các mô hình học máy.
-- Phát triển bảng điều khiển theo dõi phân tích khách hàng thực tế.
-
----
-
-## Tác Giả
-
-**Nguyễn Minh Hiếu**  
-[LinkedIn](#)
+- 8.The main subcategory are: Paper(14%), Binders(15%), Art(9%), Phones and Storage (8%).
+## IV. Recommendations
+- The company needs to have policies to:
+  - **Retaining new customers**:
+    - For new customers who have made a recent purchase, send a personalized welcome email or offer that thanks them for their purchase and encourages them to return to our business.
+    - For customers who have made only one purchase, use email marketing to keep them engaged with our brand and encourage them to make a second purchase.
+    - Offer a special discount or promotion to incentivize them to return.
+    - For customers who have made a high-value purchase, thank them for their business and offer a loyalty program that rewards them for their continued purchases.
+  - **Promoting hibernating customers**:
+    - For hibernating customers who have not made a purchase in a while, send a win-back email or offer that encourages them to return to our business.
+    - Offer a special discount or promotion that is personalized based on their past purchases.
+    - For customers who have made multiple purchases in the past but have not made one recently, send personalized email campaigns that showcase new products or services that may be of interest to them.
+    - For high-value customers who have not made a purchase in a while, send a personalized email or offer that highlights new products or services that may be of interest to them and offer a special discount or promotion that is tailored to their past purchase history.
+- Need to have a marketing strategy to focus on the segment: Consumer -> Office Supplies segment in states like California, Texas, and Illinois vs Florida.
